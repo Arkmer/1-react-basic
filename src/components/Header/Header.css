@@ -1,0 +1,24 @@
+.App-header {
+    background-color: #222;
+    height: 80px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 0px;
+  }
+  
+  .App-title {
+    font-size: 1.5em;
+  }
+
+  .navBar {
+    color: white;
+    width: 200px;
+    float: left;
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+
+  .navBar:hover {
+    color: black;
+    background-color: white;
+  }
