@@ -11,7 +11,7 @@ import Delta from '../Delta/Delta';
 
 // Required terminal command "npm i react-router-dom" to work
 // Allows the use of "Router", "Route", and "Link" functions
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   // Put functions here
