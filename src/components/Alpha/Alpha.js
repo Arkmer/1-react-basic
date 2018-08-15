@@ -14,17 +14,13 @@ class Alpha extends Component {
       }
     }
 
-    handleChangeFor = (propertyName) => {
-      // this.state.user.name = this['state']['user']['name']
-      // You can run multiple levels of currying this way.
-      return(event) => {
-        this.setState({
-          user: {
-            ...this.state.user,
-            [propertyName]: event.target.value,
-          }
-        })
-      }
+    handleChangeFor = (propertyName) => (event) => {
+      this.setState({
+        user: {
+          ...this.state.user,
+          [propertyName]: event.target.value,
+        }
+      })
     }
   
     render() {
