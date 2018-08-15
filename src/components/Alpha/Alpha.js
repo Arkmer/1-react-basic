@@ -8,6 +8,8 @@ class Alpha extends Component {
   
       this.state = {
         user: {
+          name: 'Ryan',
+          city: 'Plymouth',
         }
       }
     }
@@ -23,19 +25,29 @@ class Alpha extends Component {
         }
       })
     }
+
+    handleSubmit = (event) => {
+      console.log('User:', this.state.user);
+      event.preventDefault();
+      this.setState({
+        user: {
+          name: '',
+          city: '',
+        }
+      })
+    }
   
     render() {
       return (
         <div>
             <h1>Alpha Page</h1>
-            <p>Local State Demo</p>
+            <form onSubmit={this.handleSubmit}>
+              Name <input value={this.state.user.name} onChange={this.handleChangeFor('name')} />&nbsp;
+              City <input value={this.state.user.city} onChange={this.handleChangeFor('city')} />
+              <input type='submit' value='Submit' />
+            </form>
             <p>
-              The user is { this.state.user.name }, he is from { this.state.user.city }, { this.state.user.state }!
-            </p>
-            <p>
-              Name <input onChange={this.handleChangeFor('name')} />&nbsp;
-              City <input onChange={this.handleChangeFor('city')} />&nbsp;
-              State <input onChange={this.handleChangeFor('state')} />
+              The user is { this.state.user.name }, he is from { this.state.user.city }!
             </p>
         </div>
     );
