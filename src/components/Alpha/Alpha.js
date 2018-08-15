@@ -12,27 +12,19 @@ class Alpha extends Component {
           city: '',
         }
       }
-      this.handleNameChange = this.handleNameChange.bind(this);
-      this.handleCityChange = this.handleCityChange.bind(this);
     }
 
-    handleNameChange(event){
-      console.log(event.target.value)
-      this.setState({
-        user: {
-          ...this.state.user,
-          name: event.target.value,
-        }
-      })
-    }
-    handleCityChange(event){
-      console.log(event.target.value)
-      this.setState({
-        user: {
-          ...this.state.user,
-          city: event.target.value,
-        }
-      })
+    handleChangeFor = (propertyName) => {
+      // this.state.user.name = this['state']['user']['name']
+      // You can run multiple levels of currying this way.
+      return(event) => {
+        this.setState({
+          user: {
+            ...this.state.user,
+            [propertyName]: event.target.value,
+          }
+        })
+      }
     }
   
     render() {
@@ -44,10 +36,10 @@ class Alpha extends Component {
               The user is { this.state.user.name }, he is from { this.state.user.city }!
             </p>
             <p>
-              User <input onChange={this.handleNameChange} />
+              User <input onChange={this.handleChangeFor('name')} />
             </p>
             <p>
-              City <input onChange={this.handleCityChange} />
+              City <input onChange={this.handleChangeFor('city')} />
             </p>
         </div>
     );
