@@ -8,13 +8,14 @@ class Alpha extends Component {
   
       this.state = {
         user: {
-          name: '',
-          city: '',
         }
       }
     }
 
     handleChangeFor = (propertyName) => (event) => {
+      // this.state.user.name = this['state']['user']['name']
+      // They run exactly the same way in JavaScript
+      // You can run multiple levels of currying this way
       this.setState({
         user: {
           ...this.state.user,
@@ -29,13 +30,12 @@ class Alpha extends Component {
             <h1>Alpha Page</h1>
             <p>Local State Demo</p>
             <p>
-              The user is { this.state.user.name }, he is from { this.state.user.city }!
+              The user is { this.state.user.name }, he is from { this.state.user.city }, { this.state.user.state }!
             </p>
             <p>
-              User <input onChange={this.handleChangeFor('name')} />
-            </p>
-            <p>
-              City <input onChange={this.handleChangeFor('city')} />
+              Name <input onChange={this.handleChangeFor('name')} />&nbsp;
+              City <input onChange={this.handleChangeFor('city')} />&nbsp;
+              State <input onChange={this.handleChangeFor('state')} />
             </p>
         </div>
     );
