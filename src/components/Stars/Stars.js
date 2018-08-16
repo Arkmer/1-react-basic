@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import './Bravo.css';
+import './Stars.css';
+
+import CurrentNewStar from '../CurrentNewStar/CurrentNewStar';
+import StarList from '../StarList/StarList';
+import NewStarForm from '../NewStarForm/NewStarForm';
 
 class Bravo extends Component {
 
@@ -12,14 +16,13 @@ class Bravo extends Component {
           {name: 'fomalhaut', diameter: 100}
         ],
         newStar: {
-          name: 'North Star',
-          diameter: '1000',
+          name: '',
+          diameter: '',
         }
       }
     }
 
     handleChangeFor = (propertyName) => (event) => {
-      console.log(propertyName+":", event.target.value);
       this.setState({
         newStar: {
           ...this.state.newStar,
@@ -29,7 +32,6 @@ class Bravo extends Component {
     }
 
     handleSubmit = (event) => {
-      console.log('newStar:', this.state.newStar);
       event.preventDefault();
       this.setState({
         starList: [
@@ -46,15 +48,13 @@ class Bravo extends Component {
     render() {
       return (
         <div>
-            <h1>Bravo Page</h1>
-            <form onSubmit={this.handleSubmit}>
-              Name <input value={this.state.newStar.name} onChange={this.handleChangeFor('name')} />&nbsp;
-              Diameter <input value={this.state.newStar.diameter} onChange={this.handleChangeFor('diameter')} />
-              <input type='submit' value='Submit' />
-            </form>
-            <ul>
-              { this.state.starList.map(star => <li key={star.name}>The star { star.name } has a diameter of { star.diameter }.</li>) }
-            </ul>
+            <CurrentNewStar star={this.state.newStar}/>
+            <NewStarForm
+              newStar={this.state.newStar}
+              handleChangeFor={this.handleChangeFor}
+              handleSubmit={this.handleSubmit}
+            />
+            <StarList starList={this.state.starList} />
         </div>
     );
   }

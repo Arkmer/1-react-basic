@@ -40,7 +40,6 @@ class Alpha extends Component {
     render() {
       return (
         <div>
-            <h1>Alpha Page</h1>
             <form onSubmit={this.handleSubmit}>
               Name <input value={this.state.user.name} onChange={this.handleChangeFor('name')} />&nbsp;
               City <input value={this.state.user.city} onChange={this.handleChangeFor('city')} />

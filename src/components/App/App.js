@@ -3,11 +3,8 @@ import './App.css';
 
 // Required for linking pages
 import Header from '../Header/Header';
-import Home from '../Home/Home';
 import Alpha from '../Alpha/Alpha';
-import Bravo from '../Bravo/Bravo';
-import Charlie from '../Charlie/Charlie';
-import Delta from '../Delta/Delta';
+import Stars from '../Stars/Stars';
 
 // Required terminal command "npm i react-router-dom" to work
 // Allows the use of "Router", "Route", and "Link" functions
@@ -20,11 +17,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header title="React Test App"/>
-          <Route path="/home" component={Home} />
           <Route path="/alpha" component={Alpha} />
-          <Route path="/bravo" component={Bravo} />
-          <Route path="/charlie" component={Charlie} />
-          <Route path="/delta" component={Delta} />
+          <Route path="/stars" component={Stars} />
         </div>
       </Router>
     );
