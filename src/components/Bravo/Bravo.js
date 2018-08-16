@@ -6,27 +6,24 @@ class Bravo extends Component {
   constructor(props) {
     super(props); // Do this or things won't work right
       this.state = {
-        starList: ['hadar', 'gacrux', 'fomalhaut'],
+        starList: [
+          {name: 'hadar', diameter: 50},
+          {name: 'gacrux', diameter: 60},
+          {name: 'fomalhaut', diameter: 100}
+        ],
       }
     }
   
     render() {
-      let starListItemArray = [];
-      for(let i = 0; i < this.state.starList.length; i++){
-        let starListItem = <li>{ this.state.starList[i] }</li>;
-        starListItemArray.push(starListItem);
-      }
+      
       return (
         <div>
             <h1>Bravo Page</h1>
             <div>
               this.state = { JSON.stringify(this.state) }
             </div>
-            <div>
-              this.state.starList = { this.state.starList }
-            </div>
             <ul>
-              { starListItemArray }
+              { this.state.starList.map(star => <li key={star.name}>The star { star.name } has a diameter of { star.diameter }.</li>) }
             </ul>
         </div>
     );
@@ -34,3 +31,5 @@ class Bravo extends Component {
 }
 
 export default Bravo;
+
+// Build a form to add new stars to the list! This is the next video. Use Alpha page as a guide.
