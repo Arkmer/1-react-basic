@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './Stars.css';
 
 import CurrentNewStar from '../CurrentNewStar/CurrentNewStar';
@@ -42,6 +43,21 @@ class Bravo extends Component {
           name: '',
           diameter: '',
         }
+      })
+    }
+
+    componentDidMount(){
+      console.log('Stars Page -- Mounted');
+      this.getPlanets();
+    }
+
+    getPlanets(){
+      axios.get('https://swapi.co/api/planets/?format=json&page')
+      .then(response => {
+        console.log('getPlanetsResponse:', response);
+      })
+      .catch(error => {
+        console.log('getPlanets Error', error);
       })
     }
   

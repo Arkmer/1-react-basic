@@ -40,14 +40,14 @@ class Alpha extends Component {
     render() {
       return (
         <div>
-            <form onSubmit={this.handleSubmit}>
-              Name <input value={this.state.user.name} onChange={this.handleChangeFor('name')} />&nbsp;
-              City <input value={this.state.user.city} onChange={this.handleChangeFor('city')} />
-              <input type='submit' value='Submit' />
-            </form>
-            <p>
-              The user is { this.state.user.name }, he is from { this.state.user.city }!
-            </p>
+          <p>
+            The user is { this.state.user.name }, he is from { this.state.user.city }!
+          </p>
+          <form onSubmit={this.handleSubmit}>
+            Name <input value={this.state.user.name} onChange={this.handleChangeFor('name')} />&nbsp;
+            City <input value={this.state.user.city} onChange={this.handleChangeFor('city')} />
+            <input type='submit' value='Submit' />
+          </form>
         </div>
     );
   }
