@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './Stars.css';
 
-import CurrentNewStar from '../CurrentNewStar/CurrentNewStar';
-import StarList from '../StarList/StarList';
-import NewStarForm from '../NewStarForm/NewStarForm';
+import CurrentNewStar from './components/CurrentNewStar/CurrentNewStar';
+import StarList from './components/StarList/StarList';
+import NewStarForm from './components/NewStarForm/NewStarForm';
 
-class Bravo extends Component {
+class Stars extends Component {
 
   constructor(props) {
     super(props); // Do this or things won't work right
@@ -19,7 +18,10 @@ class Bravo extends Component {
         newStar: {
           name: '',
           diameter: '',
-        }
+        },
+        planetList: [
+
+        ],
       }
     }
 
@@ -45,21 +47,6 @@ class Bravo extends Component {
         }
       })
     }
-
-    componentDidMount(){
-      console.log('Stars Page -- Mounted');
-      this.getPlanets();
-    }
-
-    getPlanets(){
-      axios.get('https://swapi.co/api/planets/?format=json&page')
-      .then(response => {
-        console.log('getPlanetsResponse:', response);
-      })
-      .catch(error => {
-        console.log('getPlanets Error', error);
-      })
-    }
   
     render() {
       return (
@@ -76,4 +63,4 @@ class Bravo extends Component {
   }
 }
 
-export default Bravo;
+export default Stars;

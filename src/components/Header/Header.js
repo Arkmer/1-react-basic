@@ -17,7 +17,8 @@ class Header extends Component {
             <h1 className="App-title">{this.state.title}</h1>
                 <div className="link-holder">
                     <Link to="/alpha">Alpha</Link>&nbsp; &nbsp;
-                    <Link to="/stars">Stars</Link>
+                    <Link to="/stars">Stars</Link>&nbsp; &nbsp;
+                    <Link to="/planets">Planets</Link>
                 </div>
             </header>
         );
