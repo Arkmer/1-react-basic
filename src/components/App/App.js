@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import Alpha from '../Alpha/Alpha';
 import Stars from '../Stars/Stars';
 import Planets from '../Planets/Planets';
+import Time from '../Time/Time';
 
 // Required terminal command "npm i react-router-dom" to work
 // Allows the use of "Router", "Route", and "Link" functions
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/alpha" component={Alpha} />
           <Route path="/stars" component={Stars} />
           <Route path="/planets" component={Planets} />
+          <Route path="/time" component={Time} />
         </div>
       </Router>
     );

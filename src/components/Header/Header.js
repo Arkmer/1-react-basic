@@ -18,7 +18,8 @@ class Header extends Component {
                 <div className="link-holder">
                     <Link to="/alpha">Alpha</Link>&nbsp; &nbsp;
                     <Link to="/stars">Stars</Link>&nbsp; &nbsp;
-                    <Link to="/planets">Planets</Link>
+                    <Link to="/planets">Planets</Link>&nbsp; &nbsp;
+                    <Link to="/time">Time</Link>
                 </div>
             </header>
         );

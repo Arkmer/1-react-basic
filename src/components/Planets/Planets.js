@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Planets.css';
+import PlanetsTable from './components/PlanetsTable/PlanetsTable';
 
 class Planets extends Component {
 
@@ -11,16 +12,19 @@ class Planets extends Component {
 
             ],
             next: `https://swapi.co/api/planets/?format=json&page=`,
-            warning: 'Do not change the page!',
+            warning: 'Please uncomment this.getPlanets() in the componentDidMount to use this page.',
         }
     }
 
     componentDidMount(){
         console.log('Planets Page -- Mounted');
-        this.getPlanets(this.state.next);
+        // this.getPlanets(this.state.next);
     }
 
     getPlanets(url){
+        this.setState({
+            warning: 'Do not change the page!',
+        })
         axios.get(url)
         .then(response => {
         this.setState({
@@ -32,8 +36,6 @@ class Planets extends Component {
         })
         console.log('planetList:', this.state.next);
         if(this.state.next === null){ // '===' required
-            console.log('getPlanets -- Complete');
-            console.log(this.state.planetList);
             this.setState({
                 warning: 'It is now safe to change pages.',
             })
@@ -50,20 +52,7 @@ class Planets extends Component {
       return (
         <div>
             <h1>{ this.state.warning }</h1>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>Planet</th>
-                        <th>Diameter</th>
-                        <th>Population</th>
-                    </tr>
-                    { this.state.planetList.map(planet => <tr key={planet.name}>
-                        <td>{ planet.name }</td>
-                        <td>{ planet.diameter }</td>
-                        <td>{ planet.population }</td>
-                    </tr>) }
-                </tbody>
-            </table>
+            <PlanetsTable planetList={this.state.planetList} />
         </div>
     );
   }
