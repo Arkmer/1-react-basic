@@ -4,6 +4,7 @@ import './App.css';
 // Required for linking pages
 import Header from '../Header/Header';
 import Alpha from '../Alpha/Alpha';
+import Bravo from '../Bravo/Bravo';
 import Stars from '../Stars/Stars';
 import Planets from '../Planets/Planets';
 import Time from '../Time/Time';
@@ -20,6 +21,7 @@ class App extends Component {
         <div className="App">
           <Header title="React Test App"/>
           <Route path="/alpha" component={Alpha} />
+          <Route path="/bravo" component={Bravo} />
           <Route path="/stars" component={Stars} />
           <Route path="/planets" component={Planets} />
           <Route path="/time" component={Time} />

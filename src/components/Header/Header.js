@@ -17,6 +17,7 @@ class Header extends Component {
             <h1 className="App-title">{this.state.title}</h1>
                 <div className="link-holder">
                     <Link to="/alpha">Alpha</Link>&nbsp; &nbsp;
+                    <Link to="/bravo">Bravo</Link>&nbsp; &nbsp;
                     <Link to="/stars">Stars</Link>&nbsp; &nbsp;
                     <Link to="/planets">Planets</Link>&nbsp; &nbsp;
                     <Link to="/time">Time</Link>
@@ -27,3 +28,4 @@ class Header extends Component {
 }
 
 export default Header;
+

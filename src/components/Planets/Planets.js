@@ -34,7 +34,8 @@ class Planets extends Component {
             ],
             next: response.data.next,
         })
-        console.log('planetList:', this.state.next);
+        console.log('"next" url:', this.state.next);
+        // console.log('New Planets:', response.data);
         if(this.state.next === null){ // '===' required
             this.setState({
                 warning: 'It is now safe to change pages.',

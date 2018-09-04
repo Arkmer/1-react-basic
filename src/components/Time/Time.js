@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import './Time.css';
 
-class Header extends Component {
+class Time extends Component {
 
     constructor(props) {
       super(props); // Do this or things won't work right
@@ -16,11 +16,11 @@ class Header extends Component {
             <div>
                 <h1>MomentJS</h1>
                 <div>
-                    <Moment format="HHmm:ss" interval={1000}></Moment>
+                    <Moment format="HHmm:ss -- DDMMMYY" interval={1000}></Moment>
                 </div>
             </div>
         );
     }
 }
 
-export default Header;
+export default Time;
